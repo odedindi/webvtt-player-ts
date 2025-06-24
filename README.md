@@ -1,4 +1,6 @@
-# webvtt-player
+# webvtt-player-ts
+
+**webvtt-player-ts** is a TypeScript rewrite of the original [webvtt-player](https://github.com/umd-mith/webvtt-player) project. It provides the same functionality, letting you play an audio file while viewing its [WebVTT] subtitles as an interactive transcript, but with improved type safety and maintainability thanks to TypeScript.
 
 *webvtt-player* is a [React] component that lets you play an audio file while
 viewing its [WebVTT] subtitles as an interactive transcript. Take a look at the
@@ -9,20 +11,20 @@ which received generous support from the [National Endowment for the
 Humanities].
 
 ```bash
-$ npm install webvtt-player
+$ npm install webvtt-player-ts
 ```
 
 ```javascript
-import {Player} from "webvtt-player"
+import {Player} from "webvtt-player-ts"
 
 <Player
-  audio="https://example.org/audio.mp3"
+  src="https://example.org/audio.mp3"
   transcript="https://example.org/transcript.vtt" />
 ```
 
 ### OHMS Metadata Track
 
-*webvtt-player* can also display a WebVTT metadata track. The metadata object is modeled
+*webvtt-player-ts* can also display a WebVTT metadata track. The metadata object is modeled
 after the [OHMS Indexing system](http://ohda.matrix.msu.edu/2014/11/indexing-interviews-in-ohms/).
 
 Fields supported:
@@ -56,10 +58,10 @@ Fields supported:
 The metadata track can be loaded with the `metadata` parameter.
 
 ```javascript
-import {Player} from "webvtt-player"
+import {Player} from "webvtt-player-ts"
 
 <Player
-  audio="https://example.org/audio.mp3"
+  src="https://example.org/audio.mp3"
   transcript="https://example.org/transcript.vtt"
   metadata="https://example.org/metadata.vtt" />
 ```
@@ -79,7 +81,7 @@ import {Player} from "webvtt-player"
 
 ### Using Without React
 
-You can use webvtt-player outside of a React project if you use the built
+You can use webvtt-player-ts outside of a React project if you use the built
 JavaScript bundle from the [latest release](https://github.com/umd-mith/webvtt-player/releases) directly in the browser. Simply
 provide an anchor element with the id `webvtt-player` and use `data-audio` and
 `data-transcript` attributes to point to the audio and transcript files (`data-metadata` is optional):
@@ -93,7 +95,7 @@ provide an anchor element with the id `webvtt-player` and use `data-audio` and
 
 You should be able to find the latest build as part of the webvtt demo site:
 
-https://umd-mith.github.io/webvtt-player/webvtt-player.js
+https://github.com/odedindi/webvtt-player-ts/webvtt-player.js
 
 To generate the JavaScript file run the following command which will write them
 to the `public` directory:

@@ -1,0 +1,110 @@
+/* src/transcript-line.css */
+.webvtt-player .active {
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+.webvtt-player .match {
+  background-color: lightyellow;
+}
+.webvtt-player .line {
+  padding: 5px;
+  cursor: pointer;
+}
+.webvtt-player .time {
+  width: 110px;
+  float: left;
+  font-size: 10pt;
+  line-height: 14pt;
+}
+.webvtt-player .text {
+  margin-left: 110px;
+}
+
+/* src/track.css */
+.webvtt-player .track {
+  width: 100%;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+
+/* src/metadata-point.css */
+.webvtt-player .point {
+  padding: 5px;
+}
+.webvtt-player .time {
+  width: 110px;
+  float: left;
+  font-size: 10pt;
+  line-height: 14pt;
+  cursor: pointer;
+}
+.webvtt-player .text {
+  margin-left: 110px;
+}
+.webvtt-player .title {
+  font-weight: bold;
+  font-size: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+.webvtt-player .titleAlt {
+  font-style: italic;
+  font-weight: normal;
+  font-size: inherit;
+  margin: 0;
+}
+.webvtt-player .field {
+  margin-top: 5px;
+}
+.webvtt-player .field span {
+  font-style: italic;
+}
+
+/* src/search.css */
+.search {
+  border-top: thin solid #ccc;
+  padding: 5px;
+  font-size: 14pt;
+  margin-top: 5px;
+}
+.search .container {
+  border: thin solid #ccc;
+}
+.search input {
+  font-size: 12pt;
+  border: none;
+  width: 90%;
+}
+.search input:focus {
+  outline: none;
+}
+.search .icon {
+  padding-inline: 5px;
+}
+
+/* src/player.css */
+.webvtt-player .media {
+  width: 100%;
+  border: thin solid #ccc;
+  margin-right: auto;
+}
+.webvtt-player audio {
+  width: 100%;
+  background-color: #ccc;
+}
+.webvtt-player audio::-webkit-media-controls-panel {
+  background-color: #ccc;
+}
+.webvtt-player .tracks {
+  display: flex;
+}
+.webvtt-player .controls {
+  padding: 5px;
+  text-align: center;
+  vertical-align: text-top;
+  background-color: #ccc;
+}
+.webvtt-player .seekBar {
+  vertical-align: middle;
+  width: 70%;
+}

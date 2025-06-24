@@ -1,52 +1,55 @@
 {
-  "name": "webvtt-player",
-  "version": "0.0.16",
-  "description": "View WebVTT as a transcript",
-  "author": "Ed Summers <ehs@pobox.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/edsu/webvtt-player.git"
-  },
-  "main": "dist/webvtt-player.js",
-  "files": [
-    "dist/"
-  ],
-  "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --mode development",
-    "build": "webpack --config webpack.prod.js --mode production",
-    "build-public": "webpack --config webpack.public.js --mode production",
-    "publish": "npm run build-public && node utils/github-publish"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "autoprefixer": "^9.6.0",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.0.0",
-    "eslint": "^5.16.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "gh-pages": "^2.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "postcss-loader": "^3.0.0",
-    "prop-types": "^15.6.2",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0",
-    "webpack-dashboard": "^3.0.7",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.1"
-  },
-  "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
-  }
+    "name": "webvtt-player-ts",
+    "version": "1.0.3",
+    "description": "A React typescript audio player & transcription viewer.",
+    "main": "dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "repository": "git@github.com:odedindi/webvtt-player.git",
+    "author": "Oded Winberger <oded.winberger@easylearn.ch>",
+    "bugs": {
+        "url": "https://github.com/odedindi/webvtt-player/issues"
+    },
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "typescript",
+        "audio player",
+        "transcription viewer",
+        "webvtt"
+    ],
+    "packageManager": "yarn@4.9.2",
+    "scripts": {
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
+        "build": "tsup",
+        "preversion": "npm run build",
+        "version": "npm publish",
+        "postversion": "git push && git push --tags",
+        "test": "echo \"No tests specified\" && exit 0",
+        "lint": "prettier --check .  && tsc",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@types/react": "^19.1.8",
+        "@types/react-dom": "^19",
+        "autoprefixer": "^10.4.21",
+        "postcss": "^8.5.6",
+        "prettier": "^3.6.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "rimraf": "^6.0.1",
+        "tsup": "^8.5.0",
+        "typescript": "^5.8.3"
+    },
+    "peerDependencies": {
+        "react": "^19.1.0"
+    }
 }
